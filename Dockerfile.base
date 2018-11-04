@@ -1,10 +1,10 @@
 
 # download build env files
 FROM alpine:latest as builder
-ARG DSM_VERSION=6.2
+ARG dsm_version=6.2
 RUN apk --no-cache add curl
 RUN mkdir -p /tmp/build_env \
-	&& curl -L https://sourceforge.net/projects/dsgpl/files/toolkit/DSM${DSM_VERSION}/base_env-${DSM_VERSION}.txz | tar xzJ -C /tmp/build_env
+	&& curl -L https://sourceforge.net/projects/dsgpl/files/toolkit/DSM${dsm_version}/base_env-${dsm_version}.txz | tar xzJ -C /tmp/build_env
 
 # create build env
 FROM scratch
