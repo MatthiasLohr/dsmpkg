@@ -24,6 +24,6 @@ rm -rf $buildtmp
 
 cd "$pkgtmp"
 source INFO
-tar cfz "$rootdir/$package.unsigned.spk" *
+tar cfz "$rootdir/$package-$dsm_version-$dsm_platform.unsigned.spk" *
 rm -rf "$pkgtmp"
 
