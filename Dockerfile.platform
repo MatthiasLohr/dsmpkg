@@ -9,6 +9,6 @@ RUN mkdir -p /tmp/build_env \
 	&& curl -L https://sourceforge.net/projects/dsgpl/files/toolkit/DSM${dsm_version}/ds.${dsm_platform}-${dsm_version}.dev.txz | tar xzJ -C /tmp/build_env
 
 # create platform dependend build env
-FROM matthiaslohr/dsmpkg-env-base
+FROM matthiaslohr/dsmpkg-env:6.2-base
 COPY --from=builder /tmp/build_env /
 
