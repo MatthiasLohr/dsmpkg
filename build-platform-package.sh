@@ -14,7 +14,7 @@ docker run -d --rm -v "$package_source:/source:ro" -v "$buildtmp:/target" --name
 make bootstrap
 $dockercmd /bin/bash -c "cp -r /source /source_int; cd /source_int; make build"
 
-cp "$package_source/pkgfiles/"* $pkgtmp
+cp -r "$package_source/pkgfiles/"* $pkgtmp
 
 cd "$buildtmp"
 tar cfz $pkgtmp/package.tgz *
