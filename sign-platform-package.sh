@@ -11,5 +11,5 @@ cat `find $tmpdir -type f | sort` > "$tmpcatfile"
 gpg --armor --detach-sign --output "$tmpdir/syno_signature.asc" "$tmpcatfile"
 tar cfz "$spk_out" -C "$tmpdir" `ls -1 "$tmpdir"`
 
-#rm -rf "$tmpdir" "$tmpcatfile"
+rm -rf "$tmpdir" "$tmpcatfile"
 
