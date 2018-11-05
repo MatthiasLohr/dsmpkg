@@ -10,9 +10,9 @@ buildtmp=`mktemp -d -t dsmpkg-build.XXXXXXXX`
 pkgtmp=`mktemp -d -t dsmpkg-pkg.XXXXXXXX`
 
 cd "$package_source"
-docker run -d --rm -v "$package_source:/source" -v "$buildtmp:/target" --name "$container" "matthiaslohr/dsmpkg-env:$dsm_version-$dsm_platform" /bin/bash -c "trap : TERM INT; sleep infinity & wait"
+docker run -d --rm -v "$package_source:/source:ro" -v "$buildtmp:/target" --name "$container" "matthiaslohr/dsmpkg-env:$dsm_version-$dsm_platform" /bin/bash -c "trap : TERM INT; sleep infinity & wait"
 make bootstrap
-$dockercmd /bin/bash -c "cd /source; make build"
+$dockercmd /bin/bash -c "cp -r /source /source_int; cd /source_int; make build"
 
 cp "$package_source/pkgfiles/"* $pkgtmp
 
