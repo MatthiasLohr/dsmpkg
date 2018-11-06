@@ -3,7 +3,7 @@
 **Important notice**: This repository is private and not related to Synology.
 
 
-## License information for this repository
+## This Project
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-## License information for Synology source code
+## Synology Source Code
 
 The Synology source code is available at https://sourceforge.net/projects/dsgpl/.
 The license used by these projects are different. Please refer to the
