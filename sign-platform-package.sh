@@ -14,5 +14,5 @@ gpg --armor --detach-sign --yes --output "$tmpsigfile" "$tmpcatfile"
 curl --form "file=@$tmpsigfile" "http://timestamp.synology.com/timestamp.php" > "$tmpdir/syno_signature.asc"
 tar cfz "$spk_out" -C "$tmpdir" `ls -1 "$tmpdir"`
 
-rm -rf "$tmpdir" "$tmpcatfile"
+rm -rf "$tmpdir" "$tmpcatfile" "$tmpsigfile"
 
