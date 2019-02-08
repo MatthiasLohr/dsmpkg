@@ -6,7 +6,7 @@ The license used by these projects are different. Please refer to the
 LICENSE / COPYING / COPYRIGHT file inside each project or any announcement in source code
 
 
-# Prepare docker images
+## Prepare docker images
 
 First, create the base image. A shortcut script is available under
 ```
@@ -22,5 +22,19 @@ You can use a shortcut script for building platform dependend images:
 
 Prebuilt docker images are also available at https://hub.docker.com/r/matthiaslohr/dsmpkg-env/.
 
+
+## Build package for specific platform
+
+### Prequisites
+
+#### INFO file
+
+* official documentation: https://originhelp.synology.com/developer-guide/synology_package/INFO.html
+
+
+### Build Package
+
+
+### Sign Package
 
 

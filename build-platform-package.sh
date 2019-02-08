@@ -1,8 +1,8 @@
 #!/bin/bash
 
 source ./dsminfo 2> /dev/null
-dsm_version="$dsm_version_default"
-dsm_platform=""
+export dsm_version="$dsm_version_default"
+export dsm_platform=""
 
 POSITIONAL=()
 while [[ $# -gt 0 ]] ; do
@@ -57,7 +57,8 @@ docker stop $container
 rm -rf $buildtmp
 
 cd "$pkgtmp"
-source INFO
-tar cfz "$rootdir/$package-$dsm_version-$dsm_platform.unsigned.spk" *
+envsubst < INFO > INFO.tmp
+mv INFO.tmp INFO
+tar cfz "$rootdir/package-$dsm_version-$dsm_platform.unsigned.spk" *
 rm -rf "$pkgtmp"
 
