@@ -20,7 +20,7 @@ You can use a shortcut script for building platform dependend images:
 ./build-platform-image.sh <platform>
 ```
 
-Prebuilt docker images are also available at https://hub.docker.com/r/matthiaslohr/dsmpkg-env/.
+Prebuilt docker images are also available at https://hub.docker.com/r/awoland/dsmpkg-env/.
 
 
 ## Build package for specific platform
