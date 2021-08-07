@@ -26,5 +26,5 @@ done
 
 if [ -z "$dsm_version" ] ; then echo "No DSM version specified! Check $0 --help"; exit 1; fi
 
-docker build -f Dockerfile.base -t matthiaslohr/dsmpkg-env:"$dsm_version"-base --build-arg dsm_version="$dsm_version" .
+docker build -f Dockerfile.base -t awoland/dsmpkg-env:"$dsm_version"-base --build-arg dsm_version="$dsm_version" .
 
