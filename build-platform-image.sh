@@ -34,5 +34,5 @@ done
 if [ -z "$dsm_version" ] ; then echo "No DSM version specified! Check $0 --help"; exit 1; fi
 if [ -z "$dsm_platform" ] ; then echo "No DSM platform specified! Check $0 --help"; exit 1; fi
 
-docker build -f Dockerfile.platform -t matthiaslohr/dsmpkg-env:"$dsm_version"-"$dsm_platform" --build-arg dsm_version="$dsm_version" --build-arg dsm_platform="$dsm_platform" .
+docker build -f Dockerfile.platform -t awoland/dsmpkg-env:"$dsm_version"-"$dsm_platform" --build-arg dsm_version="$dsm_version" --build-arg dsm_platform="$dsm_platform" .
 
