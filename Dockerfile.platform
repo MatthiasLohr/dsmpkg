@@ -3,7 +3,7 @@ ARG dsm_version=6.2
 
 # download platform dependend env files
 FROM alpine:latest as builder
-ARG dsm_version=6.2
+ARG dsm_version=7.0
 ARG dsm_platform
 RUN apk --no-cache add curl
 RUN echo "Downloading ${dsm_version} ${dsm_platform}..." \
@@ -12,6 +12,6 @@ RUN echo "Downloading ${dsm_version} ${dsm_platform}..." \
 	&& curl -L https://sourceforge.net/projects/dsgpl/files/toolkit/DSM${dsm_version}/ds.${dsm_platform}-${dsm_version}.dev.txz | tar xzJ -C /tmp/build_env
 
 # create platform dependend build env
-FROM matthiaslohr/dsmpkg-env:${dsm_version}-base
+FROM awoland/dsmpkg-env:${dsm_version}-base
 COPY --from=builder /tmp/build_env /
 
