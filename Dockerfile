@@ -3,7 +3,7 @@ ARG dsm_version=6.2
 
 # download platform dependend env files
 FROM alpine:latest as builder
-ARG dsm_version=7.0
+ARG dsm_version=7.1
 ARG dsm_platform
 RUN apk --no-cache add curl
 RUN echo "Downloading ${dsm_version} ${dsm_platform}..." \
