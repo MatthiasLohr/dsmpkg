@@ -21,7 +21,7 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile.base --tag awoland/dsmpkg-env:7.0-base --build-arg dsm_version="7.0"
+      run: docker build . --file Dockerfile.base --tag awoland/dsmpkg-env:7.1-base --build-arg dsm_version="7.1"
       
     - name: Docker Push
-      run: docker push awoland/dsmpkg-env:7.0-base
+      run: docker push awoland/dsmpkg-env:7.1-base
