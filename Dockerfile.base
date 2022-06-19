@@ -4,7 +4,7 @@ FROM alpine:latest as builder
 ARG dsm_version=7.1
 RUN apk --no-cache add curl
 RUN mkdir -p /tmp/build_env \
-	&& curl -L https://sourceforge.net/projects/dsgpl/files/toolkit/DSM${dsm_version}/base_env-${dsm_version}.txz | tar xzJ -C /tmp/build_env
+	&& curl -L https://global.download.synology.com/download/ToolChain/toolkit/${dsm_version}/base/base_env-${dsm_version}.txz | tar xzJ -C /tmp/build_env
 
 # create build env
 FROM scratch
